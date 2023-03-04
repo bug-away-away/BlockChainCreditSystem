@@ -65,23 +65,23 @@ func main() {
 	fmt.Println(">> 通过链码外部服务设置链码状态......")
 
 	edu := service.Education{
-		Name: "张三",
-		Gender: "男",
-		Nation: "汉",
-		EntityID: "101",
-		Place: "北京",
-		BirthDay: "1991年01月01日",
-		EnrollDate: "2009年9月",
-		GraduationDate: "2013年7月",
-		SchoolName: "中国政法大学",
+		Name: "华小科",
+		Gender: "待定",
+		Nation: "待定",
+		EntityID: "404",
+		Place: "武汉",
+		BirthDay: "2333年02月33日",
+		EnrollDate: "2333年3月",
+		GraduationDate: "2333年3月",
+		SchoolName: "华中科技大学",
 		Major: "社会学",
 		QuaType: "普通",
 		Length: "四年",
-		Mode: "普通全日制",
+		Mode: "专升本",
 		Level: "本科",
-		Graduation: "毕业",
+		Graduation: "肄业",
 		CertNo: "111",
-		Photo: "/static/photo/11.png",
+		Photo: "/static/images/huake.jpg",
 	}
 
 	serviceSetup, err := service.InitService(info.ChaincodeID, info.ChannelID, info.Orgs[0], sdk)
@@ -96,7 +96,7 @@ func main() {
 		fmt.Println("信息发布成功, 交易编号为: " + msg)
 	}
 
-	result, err := serviceSetup.FindEduInfoByEntityID("101")
+	result, err := serviceSetup.FindEduInfoByEntityID("404")
 	if err != nil {
 		fmt.Println(err.Error())
 	} else {
